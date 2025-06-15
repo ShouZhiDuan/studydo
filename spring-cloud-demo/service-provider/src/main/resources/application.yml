@@ -1,0 +1,37 @@
+server:
+  port: 18081
+
+spring:
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        ip: 127.0.0.1
+        namespace: dev
+        group: DEFAULT_GROUP
+        cluster-name: DEFAULT
+        username: nacos
+        password: nacos
+        metadata:
+          version: 1.0.0
+          author: techzhi
+
+# 监控端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# 日志配置
+logging:
+  level:
+    com.example.provider: debug
+    com.alibaba.nacos: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

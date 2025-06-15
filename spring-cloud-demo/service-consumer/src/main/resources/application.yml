@@ -1,0 +1,47 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        ip: 127.0.0.1
+        namespace: dev
+        group: DEFAULT_GROUP
+        cluster-name: DEFAULT
+        username: nacos
+        password: nacos
+        metadata:
+          version: 1.0.0
+          author: techzhi
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 5000
+            read-timeout: 5000
+            logger-level: basic
+      hystrix:
+        enabled: true
+
+# 监控端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# 日志配置
+logging:
+  level:
+    com.example.consumer: debug
+    com.alibaba.nacos: info
+    com.example.consumer.feign: debug
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
