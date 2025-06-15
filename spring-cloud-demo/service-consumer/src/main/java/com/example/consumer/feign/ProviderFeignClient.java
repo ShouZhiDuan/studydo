@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 /**
  * 服务生产者Feign客户端
  */
-@FeignClient(name = "service-provider", fallback = ProviderFeignClientFallback.class)
+@FeignClient(name = "service-provider", fallbackFactory = GlobalFeignFallbackFactory.class)
 public interface ProviderFeignClient {
 
     /**

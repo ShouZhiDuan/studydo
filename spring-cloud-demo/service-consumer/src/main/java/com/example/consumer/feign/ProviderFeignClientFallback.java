@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ProviderFeignClientFallback implements ProviderFeignClient {
 
     @Override
-    public String getInfo() {
+        public String getInfo() {
         return "服务暂时不可用，请稍后重试";
     }
 
