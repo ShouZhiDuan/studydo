@@ -24,8 +24,21 @@ spring:
             connect-timeout: 5000
             read-timeout: 5000
             logger-level: basic
-      hystrix:
+      circuitbreaker:
         enabled: true
+        # 可选：配置断路器组
+        group:
+          enabled: true
+
+# Resilience4j断路器配置（可选）
+resilience4j:
+  circuitbreaker:
+    instances:
+      service-provider:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
 
 # 监控端点配置
 management:
