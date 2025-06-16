@@ -75,9 +75,8 @@ public class ProviderController {
     @GetMapping("/config")
     public Map<String, Object> getConfig() {
         Map<String, Object> config = new HashMap<>();
-        config.put("服务名称", serviceName);
-        config.put("服务端口", port);
-        config.put("应用名称", appName);
+        config.put("mysql.db", mysqlDb);
+        config.put("app.name", appName);
         // config.put("应用版本", appVersion);
         // config.put("应用描述", appDescription);
         // config.put("数据库URL", databaseUrl);
