@@ -81,7 +81,7 @@ public class ProviderController {
         // config.put("应用描述", appDescription);
         // config.put("数据库URL", databaseUrl);
         // config.put("数据库用户名", databaseUsername);
-        config.put("获取时间", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        config.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         return config;
     }
 
