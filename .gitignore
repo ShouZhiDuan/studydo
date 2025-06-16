@@ -1,0 +1,4 @@
+**/.vscode
+**/.git
+**/deploy/**/data
+**/deploy/**/logs
