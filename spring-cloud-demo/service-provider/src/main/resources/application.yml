@@ -23,15 +23,18 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh
   endpoint:
     health:
       show-details: always
+    refresh:
+      enabled: true
 
 # 日志配置
 logging:
   level:
     com.example.provider: debug
     com.alibaba.nacos: info
+    com.alibaba.cloud.nacos.config: debug
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
